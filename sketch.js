@@ -1,4 +1,4 @@
-var dog, sadDog, happyDog,BackgroundIMG, database;
+var dog, sadDog, happyDog,database;
 var foodS, foodStock;
 var fedTime, lastFed;
 var feed, addFood;
@@ -7,7 +7,7 @@ var foodObj;
 function preload() {
     sadDog = loadImage("Dog.png");
     happyDog = loadImage("happy dog.png");
-    BackgroundIMG = loadImage("bg.jpg")
+  
 }
 
 function setup() {
@@ -34,7 +34,7 @@ function setup() {
 }
 
 function draw() {
-    background(BackgroundIMG);
+    background("green);
     foodObj.display();
 
     fedTime = database.ref('FeedTime');
