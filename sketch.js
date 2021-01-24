@@ -1,4 +1,4 @@
-var dog, sadDog, happyDog, database;
+var dog, sadDog, happyDog,BackgroundIMG, database;
 var foodS, foodStock;
 var fedTime, lastFed;
 var feed, addFood;
@@ -7,11 +7,13 @@ var foodObj;
 function preload() {
     sadDog = loadImage("Dog.png");
     happyDog = loadImage("happy dog.png");
+    BackgroundIMG = loadImage("bg.jpg")
 }
 
 function setup() {
     database = firebase.database();
     createCanvas(1150, 634);
+
     foodObj = new Food();
 
     foodStock = database.ref('Food');
@@ -32,7 +34,7 @@ function setup() {
 }
 
 function draw() {
-    background("green");
+    background(BackgroundIMG);
     foodObj.display();
 
     fedTime = database.ref('FeedTime');
